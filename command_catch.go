@@ -3,8 +3,8 @@ package main
 import (
 	"errors"
 	"fmt"
-	"math/floor"
 	"math/rand"
+	"time"
 )
 
 func commandCatch(cfg *config, args ...string) error {
@@ -19,8 +19,8 @@ func commandCatch(cfg *config, args ...string) error {
 	}
 	rand.Seed(time.Now().UnixNano())
 
-	baseExp := pokemonData.baseExp
-	difficulty := int(math.floor(baseExp / 10))
+	baseExp := pokemonData.BaseExperience
+	difficulty := int(baseExp / 10)
 	pokemonName := pokemonData.Name
 
 	fmt.Printf("Throwing a Pokeball at %s...\n", pokemonName)
@@ -31,4 +31,5 @@ func commandCatch(cfg *config, args ...string) error {
 	} else {
 		fmt.Printf("%s was caught!", pokemonName)
 	}
+	return nil
 }
