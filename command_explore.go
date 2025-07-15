@@ -6,11 +6,11 @@ import (
 )
 
 func commandExplore(cfg *config, args ...string) error {
-	if len(args) < 1 {
-		return errors.New("Area name not provided")
+	if len(args) != 1 {
+		return errors.New("area name not provided")
 	}
 
-	locationResp, err := cfg.pokeapiClient.ExploreLocation(args[1])
+	locationResp, err := cfg.pokeapiClient.ExploreLocation(args[0])
 	if err != nil {
 		return err
 	}
