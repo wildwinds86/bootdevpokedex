@@ -26,6 +26,7 @@ func commandCatch(cfg *config, args ...string) error {
 	fmt.Printf("Throwing a Pokeball at %s...\n", pokemonName)
 
 	roll := rand.Intn(100-1) + 1
+	fmt.Printf("Number rolled: %d, difficulty %d\n", roll, difficulty)
 	if roll > difficulty {
 		fmt.Printf("%s escaped!\n", pokemonName)
 	} else {
