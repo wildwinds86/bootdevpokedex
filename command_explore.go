@@ -6,7 +6,7 @@ import (
 )
 
 func commandExplore(cfg *config, args ...string) error {
-	if len(args) < 2 {
+	if len(args) < 1 {
 		return errors.New("Area name not provided")
 	}
 
