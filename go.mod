@@ -1,3 +1,3 @@
 module github.com/wildwinds86/bootdevpokedex
 
-go 1.24.2
+go 1.24
