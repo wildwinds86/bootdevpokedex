@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func commandExplore(cfg *config, args []string) error {
+func commandExplore(cfg *config, args ...string) error {
 	if len(args) < 2 {
 		return errors.New("Area name not provided")
 	}
